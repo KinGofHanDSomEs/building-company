@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    width: 100vw;
+    background-color: white;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 1300px;
+    height: 100%;
+    padding: 20px;
+
+    display: flex;
+}

@@ -1,0 +1,236 @@
+@import "./root.css";
+
+.header {
+    position: sticky;
+    top: 0;
+
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            flex-grow: 1;
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            gap: 7px;
+
+            .image img {
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+            }
+
+            .name {
+                display: flex;
+                flex-direction: column;
+                line-height: 0.8;
+
+                h1 {
+                    font-size: 1.4rem;
+                    color: var(--blue-color);
+                    transition: all .15s ease-in-out;
+                }
+
+                p {
+                    font-size: 0.8rem;
+                    color:var(--blue-color);
+                    transition: all .15s ease-in-out;
+                }
+            }
+        }
+
+        .logo:hover .name {
+            h1, p {
+                color: var(--light-blue-color);
+            }
+        }
+
+        .menu {
+            flex-grow: 2;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 30px;
+
+            a {
+                text-decoration: none;
+                font-size: 1rem;
+                color: black;
+                transition: all .15s;
+            }
+
+            a:hover {
+                transform: translateY(-2px);
+                color: var(--blue-color);
+            }
+        }
+
+        .phone {
+            flex-grow: 1;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+
+            p {
+                cursor: default;
+                font-size: 1rem;
+                color: black;
+                transition: all .15s ease-in-out;
+            }
+
+            p:hover {
+                color: var(--blue-color);
+            }
+        }
+    }
+}
+
+.main {
+    height: 1000px;
+}
+
+.footer {
+    width: 100%;
+    height: 220px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+
+    .container {
+        flex-direction: column;
+        gap: 40px;
+
+        .contacts {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .questions {
+                display: flex;
+                justify-content: start;
+                flex-direction: column;
+                gap: 15px;
+
+                p {
+                    cursor: default;
+                    font-size: 0.8rem;
+                }
+
+                button {
+                    cursor: pointer;
+                    border-radius: 20px;
+                    width: 90%;
+                    border: none;
+                    padding-block: 10px;
+                    font-size: 0.8rem;
+                    font-weight: bold;
+                    color: var(--blue-color);
+                    background-color: var(--light-gray-color);
+                    transition: all .2s ease-in-out;
+                }
+
+                button:hover {
+                    border-radius: 5px;
+                }
+            }
+
+            .socials {
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                align-items: end;
+                gap: 10px;
+
+                p {
+                    font-size: 0.8rem;
+                    cursor: default;
+                }
+
+                .icons {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: end;
+                    align-items: center;
+                    gap: 10px;
+
+                    div {
+                        cursor: pointer;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: var(--light-gray-color);
+                        transition: all .2s ease-in-out;
+
+                        img {
+                            width: 25px;
+                            height: 25px;
+                        }
+                    }
+
+                    div:hover {
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+
+        .copyright {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .logo {
+                width: 10%;
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 15px;
+                }
+            }
+
+            .information {
+                width: 70%;
+
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                p {
+                    cursor: default;
+                    color: var(--gray-color);
+                    font-size: 0.6rem;
+                }
+            }
+
+            .name {
+                width: 20%;
+
+                p {
+                    cursor: default;
+                    line-height: 0.9;
+                    text-align: right;
+                    color: var(--blue-color);
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
