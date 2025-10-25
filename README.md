@@ -8,17 +8,17 @@ git init
 git remote add origin https://github.com/KinGofHanDSomEs/building-company.git
 ```
 ## Работа с кодом
-### 1. Сохранение файлов для commit 
+### 1. Получение недостающих файлов с github
+```
+git pull origin main
+```
+### 2. Сохранение файлов для commit 
 ```
 git add .
 ```
-### 2. Сам commit
+### 3. Сам commit
 ```
 git commit -m "message"
-```
-### 3. Получение недостающих файлов с github
-```
-git pull origin main
 ```
 ### 4. Слияние ветки main
 ```

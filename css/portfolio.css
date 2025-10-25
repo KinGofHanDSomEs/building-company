@@ -7,12 +7,15 @@
     .container {
         display: flex;
         flex-direction: column;
+        gap: 50px;
 
         .choose-cities {
             display: flex;
             flex-direction: column;
             gap: 10px;
+
             p {
+                cursor: default;
                 font-size: 0.8rem;
                 color: black;
             }
@@ -22,6 +25,9 @@
                 font-size: 1.1rem;
 
                 .legend {
+                    transition: all .1s ease-in-out;
+
+                    cursor: pointer;
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
@@ -29,6 +35,7 @@
                     background-color: var(--light-gray-color);
                     padding: 10px;
                     border-radius: 10px;
+                    
 
                     img {
                         width: 20px;
@@ -41,18 +48,29 @@
                     }
                 }
 
+                .legend:active {
+                    color: var(--gray-color);
+                }
+
                 .select {
+                    z-index: 9998;
                     position: absolute;
                     width: 500px;
                     overflow: hidden;
                     max-height: 0;
                     background-color: var(--light-gray-color);
                     border-radius: 10px;
-                    transition: max-height .2s ease-in-out;
+                    transition: all .3s ease-in;
 
                     .option {
+                        transition: all .2s ease-in-out;
+                        cursor: pointer;
                         padding: 10px;
                         border-bottom: 1px solid black;
+                    }
+
+                    .option:hover {
+                        background-color: var(--gray-color);
                     }
 
                     .option:last-child {
@@ -60,8 +78,113 @@
                     }
                 }
 
+
                 .opened {
                     max-height: 400px;
+                }
+            }
+        }
+
+        .projects-header {
+            cursor: default;
+            text-align: center;
+            font-size: 1.9rem;
+
+            span {
+                font-size: 2.5rem;
+                color: var(--blue-color)
+            }
+        }
+        .projects-container {
+            width: 100%;
+            height: 1700px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            .projects.active {
+                visibility: visible;
+            }
+
+            .projects {
+                visibility: hidden;
+                width: 100%;
+                position: absolute;
+                display: grid;
+                grid-template-columns: repeat(3, 31%);
+                grid-template-rows: repeat(3, 520px);
+                justify-content: space-between;
+                align-items: center;
+                row-gap: 50px;
+
+                .project {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    background-color: white;
+
+                    .images-container {
+                        transition: all .1s ease-in-out;
+                        position: relative;
+                        width: 100%;
+                        height: 440px;
+
+                        img {
+                            position: absolute;
+                            object-fit: cover;
+                            opacity: 0;
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 30px;
+                            transition: all .2s ease-in-out;
+                        }
+
+                        img.active {
+                            opacity: 1;
+                        }
+
+                        .progress-bar {
+                            position: absolute;
+                            display: flex;
+                            width: 100%;
+                            height: 100%;
+                            justify-content: center;
+                            align-items: end;
+                            gap: 5px;
+                            padding-bottom: 20px;
+
+                            .progress {
+                                background-color: var(--gray-color);
+                                width: 7%;
+                                height: 2px;
+
+                            }
+
+                            .progress.active {
+                                background-color: white;
+                            }
+                        }
+                    }
+
+                    .information {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+
+                        h2 {
+                            font-weight: 500;
+                            font-size: 1.5rem;
+                        }
+
+                        p {
+                            font-size: 0.8rem;
+                            font-weight: 400;
+                        }
+                    }
                 }
             }
         }
