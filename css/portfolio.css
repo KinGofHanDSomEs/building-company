@@ -1,0 +1,69 @@
+@import "root.css";
+
+.main {
+    display: flex;
+    justify-content: center;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+
+        .choose-cities {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            p {
+                font-size: 0.8rem;
+                color: black;
+            }
+
+            .cities {
+                width: 300px;
+                font-size: 1.1rem;
+
+                .legend {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    background-color: var(--light-gray-color);
+                    padding: 10px;
+                    border-radius: 10px;
+
+                    img {
+                        width: 25px;
+                        height: 25px;
+                        transition: transform .2s ease-in-out;
+                    }
+
+                    .opened {
+                        transform: rotate(-180deg);
+                    }
+                }
+
+                .select {
+                    position: absolute;
+                    width: 300px;
+                    overflow: hidden;
+                    max-height: 0;
+                    background-color: var(--light-gray-color);
+                    border-radius: 10px;
+                    transition: max-height .2s ease-in-out;
+
+                    .option {
+                        padding: 10px;
+                        border-bottom: 1px solid black;
+                    }
+
+                    .option:last-child {
+                        border: none;
+                    }
+                }
+
+                .opened {
+                    max-height: 400px;
+                }
+            }
+        }
+    }
+}
