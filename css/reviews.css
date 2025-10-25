@@ -1,0 +1,43 @@
+@import "root.css";
+
+.com {
+    color:var(--blue-color);
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.rev-tec{
+    margin-bottom:10px;
+    font-size: 1.2rem;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+}
+
+.Main-review {
+    background-color: var(--light-gray-color);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+img{
+    width:35px;
+}
+
+.rating{
+    display: flex;
+}
+
+.date{
+    padding: 10px;
+}
+
+.REW{
+    justify-content: center;
+    align-items: center;
+}
