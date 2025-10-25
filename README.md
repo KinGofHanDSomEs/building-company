@@ -1,25 +1,26 @@
+## Подключение к проекту
 ### 1. Инициализация git
 ```
 git init
 ```
 ### 2. Подключение к нашему проекту на github
 ```
-git remote add origin git@github.com:KinGofHanDSomEs/building-company.git
+git remote add origin https://github.com/KinGofHanDSomEs/building-company.git
 ```
-### 3. Получение актуальных файлов нашего проекта с github
+## Работа с кодом
+### 1. Получение недостающих файлов с github
 ```
 git pull origin main
 ```
-### 4. Пишем код
-### 5. Сохранение файлов для commit 
+### 2. Сохранение файлов для commit 
 ```
 git add .
 ```
-### 6. Сам commit
+### 3. Сам commit
 ```
 git commit -m "message"
 ```
-### 7. Отправляем файлы на github
+### 4. Отправляем файлы на github
 ```
 git push origin main
 ```
