@@ -1,0 +1,231 @@
+@import "root.css";
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+
+    .services {
+        display: flex;
+        justify-content: center;
+
+        .container {
+            flex-direction: column;
+            gap: 50px;
+
+            .caption {
+                width: 100%;
+                text-align: center;
+
+                h1 {
+                    font-weight: 500;
+                    cursor: default;
+                    font-size: 1.9rem;
+                    color: var(--blue-color);
+                }
+            }
+
+            .menu-container {
+                background-color: var(--light-gray-color);
+                width: 700px;
+                border-radius: 40px;
+
+                .menu {
+                    cursor: pointer;
+                    border-bottom: 1px solid black;
+
+                    .title {
+                        margin: 10px 20px;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 10px;
+
+                        img {
+                            transition: transform .1s ease-in-out;
+                            width: 30px;
+                            height: 30px;
+                        }
+
+                        h2 {
+                            font-size: 1.5rem;
+                            font-weight: 500;
+                        }
+
+                        img.active {
+                            transform: rotate(90deg);
+                        }
+                    }
+
+
+                    .sub-menu-container {
+                        visibility: hidden;
+                        height: 0;
+
+                        .sub-menu {
+                            position: relative;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+
+                            h3 {
+                                cursor: pointer;
+                                margin: 5px 50px;
+                                font-size: 1.3rem;
+                                font-weight: 400;
+                                width: auto;
+                                padding: 10px;
+                            }
+
+                            .sub-sub-menu {
+                                transition: all .1s ease-in-out;
+                                z-index: 9998;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 5px;
+                                transform: scale(0);
+                                transform-origin: left top;
+                                background-color: var(--blue-color);
+                                border-radius: 20px;
+                                width: 400px;
+                                height: auto;
+                                position: absolute;
+                                left: 100%;
+                                top: 5px;
+                                padding: 10px;
+                                font-weight: 500;
+                                color: white;
+
+                                h4 {
+                                    font-size: 0.9rem;
+                                    font-weight: 500;
+                                }
+
+                                p {
+                                    font-size: 0.9rem;
+                                }
+
+                                ul {
+                                    padding-inline: 20px;
+
+                                    li {
+                                        font-size: 0.9rem;
+                                    }
+                                }
+                            }
+
+                            h3:hover {
+                                background-color: var(--blue-color);
+                                border-radius: 15px;
+                                color: white;
+                            }
+
+                            h3:hover + .sub-sub-menu {
+                                transform: scale(1);
+                            }
+                        }
+                    }
+
+                    .sub-menu-container.active {
+                        visibility: visible;
+                        height: auto;
+                    }
+                }
+
+                .menu:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+
+    .request {
+        background-color: var(--light-gray-color);
+        display: flex;
+        justify-content: center;
+
+        .container {
+            align-self: center;
+            width: 50%;
+            background-color: var(--light-gray-color);
+            flex-direction: column;
+            padding: 20px;
+            border-radius: 40px;
+            gap: 50px;
+
+            .legend {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+
+                h1 {
+                    cursor: default;
+                    font-size: 1.9rem;
+                    text-align: center;
+                    padding: 10px 40px;
+                    border-radius: 20px;
+                    font-weight: 500;
+                }
+            }
+
+            .form {
+                background-color: var(--blue-color);
+                border-radius: 20px;
+                padding: 20px;
+                color: white;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 20px;
+
+                .input {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+
+                    label {
+                        font-size: 1.3rem;
+                    }
+
+                    input, select {
+                        font-size: 1.4rem;
+                        padding: 10px;
+                        color: black;
+                        outline: none;
+                        border: none;
+                        background-color: white;
+                    }
+
+                    select {
+                        cursor: pointer;
+                    }
+                }
+
+                button {
+                    cursor: pointer;
+                    transition: all .15s ease-in-out;
+                    align-self: center;
+                    margin-top: 10px;
+                    width: 40%;
+                    background-color: white;
+                    border: none;
+                    color: var(--blue-color);
+                    padding: 10px 10px;
+                    font-size: 1.3rem;
+                    border-radius: 30px;
+                }
+
+                button:hover {
+                    background-color: var(--light-blue-color);
+                    color: black;
+                }
+
+                button:active {
+                    background-color: black;
+                    color: white;
+                }
+            }
+        }
+    }
+}
