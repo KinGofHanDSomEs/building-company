@@ -1,14 +1,114 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
 
-.main{
+.main {
     display: flex;
     justify-content: center;
+
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    .top-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .history-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-the-company{
+        text-align: center;
+        width: 65%;
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+    .company-history {
+        width: 65%;
+        background-color: #1d8df1;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    h1 {
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+    .p-history {
+        color: white;
+        padding: 2px;
+        margin-bottom: 5px;
+    }
+
+    li {
+        color: white;
+        margin-left: 40px ;
+        width: 80%;
+        padding: 2px;
+    }
+    .achievement-card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:30px;
+        padding: 20px;
+    }
+    .achievement-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        font-size: 16px;
+        width: 285px;
+        height: 285px;
+        background-color: #F4F6FB;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .achievement-card:hover {
+        transform:scale(1.1);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+    }
+
+    .information-card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:30px;
+        padding: 20px;
+    }
+    .p-information {
+        padding: 10px;
+    }
+    .p-achievement {
+        padding: 10px;
+    }
+    .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 200px;
+        height: 200px;
+        background-color: #1d8df1;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        color: white;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .card:hover {
+        transform:scale(1.1);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+    }
+
+    img {
+        width: 40%;
+    }
 }
 
-p {
-  text-align: center;
-}
