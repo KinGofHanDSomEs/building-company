@@ -147,7 +147,7 @@
 
         .container {
             align-self: center;
-            width: 50%;
+            width: 800px;
             background-color: var(--light-gray-color);
             flex-direction: column;
             padding: 20px;

@@ -1,43 +1,305 @@
 @import "root.css";
 
-.com {
-    color:var(--blue-color);
+
+.main {
     display: flex;
     justify-content: center;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
 
-.rev-tec{
-    margin-bottom:10px;
-    font-size: 1.2rem;
-}
+    .container {
+        flex-direction: column;
+        gap: 20px;
 
-.main{
-    display: flex;
-    justify-content: center;
-}
+        .title {
+            width: 100%;
 
-.Main-review {
-    background-color: var(--light-gray-color);
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 20px;
-}
+            h1 {
+                text-align: center;
+                font-size: 1.9rem;
+                font-weight: 500;
+                color: var(--blue-color);
+            }
+        }
 
-img{
-    width:35px;
-}
+        .choose-service {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 50px;
 
-.rating{
-    display: flex;
-}
+            p {
+                font-size: 0.8rem;
+                margin-bottom: 10px;
+            }
+            .row {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
 
-.date{
-    padding: 10px;
-}
+                .select {
+                    width: 600px;
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    background-color: var(--light-gray-color);
+                    border-radius: 10px;
+                    padding: 10px 20px;
 
-.REW{
-    justify-content: center;
-    align-items: center;
+                    h2 {
+                        font-weight: 500;
+                        font-size: 1.1rem;
+                    }
+
+                    img {
+                        transition: all .2s ease-in-out;
+                        width: 20px;
+                        height: 20px;
+                    }
+
+                    img.active {
+                        transform: rotate(-180deg);
+                    }
+                }
+
+                .select:active {
+                    h2 {
+                        color: var(--gray-color);
+                    }
+                }
+
+                .options {
+                    z-index: 9998;
+                    transition: max-height .2s ease;
+                    max-height: 0;
+                    position: absolute;
+                    top: 100%;
+                    width: 600px;
+                    background-color: var(--light-gray-color);
+                    border-radius: 10px;
+                    overflow: hidden;
+
+                    .option {
+                        cursor: pointer;
+                        font-size: 1.1rem;
+                        border-bottom: 1px solid black;
+                        padding: 5px 20px;
+                    }
+
+                    .option:hover {
+                        background-color: var(--gray-color);
+                    }
+
+                    .option:active {
+                        background-color: var(--gray-color);
+                        color: var(--light-gray-color);
+                    }
+
+                    .option:last-child {
+                        border-bottom: none;
+                    }
+                }
+
+                .options.active {
+                    max-height: 700px;
+                }
+
+                button {
+                    transition: all .1s ease-in-out;
+                    font-size: 1.1rem;
+                    background-color: var(--blue-color);
+                    color: white;
+                    border: none;
+                    padding-inline: 30px;
+                    cursor: pointer;
+                    border-radius: 30px;
+                }
+
+                button:hover {
+                    background-color: var(--light-blue-color);
+                }
+
+                button:active {
+                    background-color: black;
+                    color: white;
+                }
+            }
+        }
+
+        .modal-write-review {
+            transition: all .2s ease;
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.4);
+            justify-content: center;
+            align-items: center;
+
+            .block {
+                background-color: white;
+                width: 600px;
+                border-radius: 30px;
+                padding: 20px;
+
+                .title {
+                    h3 {
+                        text-align: center;
+                        font-size: 1.6rem;
+                        font-weight: 500;
+                        padding-bottom: 20px;
+                    }
+
+                    border-bottom: 1px solid black;
+                }
+
+                .form {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 10px;
+                    padding-top: 20px;
+
+                    .input {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+
+                        label {
+                            font-size: 1rem;
+                        }
+
+                        input, textarea, select {
+                            outline: none;
+                            padding: 5px;
+                            font-size: 1.3rem;
+                            font-family: "Segoe UI", sans-serif;
+                            font-weight: 400;
+                        }
+
+                        .change-mark {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            gap: 10px;
+
+                            input {
+                                width: 200px;
+                            }
+                        }
+                    }
+
+                    button {
+                        font-size: 1rem;
+                        align-self: center;
+                        width: 50%;
+                        padding-block: 5px;
+                        border-radius: 20px;
+                        border: 1px solid black;
+                        margin-block: 10px 0;
+                    }
+
+                    button:hover {
+                        background-color: var(--light-blue-color);
+                    }
+
+                    button:active {
+                        background-color: var(--blue-color);
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .reviews {
+            width: 100%;
+            position: relative;
+
+            .value {
+                transition: all .1s ease-in-out;
+                opacity: 0;
+                display: inline-flex;
+                flex-direction: column;
+                gap: 20px;
+                position: absolute;
+
+                .review {
+                    background-color: var(--light-gray-color);
+                    border-radius: 20px;
+                    padding: 10px 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    .caption {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        .information {
+                            display: flex;
+                            flex-direction: column;
+
+                            h3 {
+                                font-size: 1.2rem;
+                                font-weight: 500;
+                            }
+
+                            p {
+                                font-size: 0.8rem;
+                                color: var(--gray-color);
+                            }
+                        }
+
+                        .mark {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 5px;
+
+                            img {
+                                transition: all 1s ease-in-out;
+                                width: 40px;
+                                height: 40px;
+                            }
+
+                            img:hover {
+                                transform: rotate(-360deg);
+                            }
+
+                            p {
+                                font-size: 1.2rem;
+                            }
+                        }
+                    }
+
+                    .message {
+                        p {
+                            font-size: 1.1rem;
+                        }
+                    }
+                }
+
+                .review:nth-child(odd) {
+                    background-color:var(--blue-color);
+                    color: white;
+
+                    .caption .information p {
+                        color: var(--light-blue-color);
+                    }
+                }
+            }
+
+            .value.active {
+                opacity: 1;
+            }
+        }
+    }
 }
