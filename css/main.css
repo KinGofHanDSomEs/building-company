@@ -27,20 +27,19 @@
         .adventertising-main {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
-
-            .adventertising {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
 
                 .images-adventertising {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     position: relative;
                     width: 100%;
                     height: 440px;
                 }
+            .img-adventertising{
+                width:80%;
+                border-radius: 15px;
+            }
             }
         }
 
@@ -86,4 +85,4 @@
             }
         }
     }
-}
+
