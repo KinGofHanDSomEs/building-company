@@ -97,7 +97,20 @@
 
             .short-information {
                 height: 350px;
+                transition: transform 0.4s ease, box-shadow 0.4s ease;
             }
+            .short-information:hover {
+                transform: scale(1.1);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+            }
+            .number-one, .top-five, .realty, .list {
+                transition: transform 0.4s ease, box-shadow 0.4s ease
+            }
+            .number-one:hover, .top-five:hover, .realty:hover, .list:hover {
+                transform: scale(1.1);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+            }
+
         }
     }
 }
