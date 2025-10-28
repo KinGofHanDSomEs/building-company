@@ -18,6 +18,7 @@
     const writeReviewBtn = id("write-review-btn");
     const modalWriteReview = cls(".modal-write-review");
     const writeReviewSubmit = id("write-review-submit");
+    const closeBtn = id("close-btn");
 
     const nameInput = id("name");
     const lastNameInput = id("lastname");
@@ -50,7 +51,8 @@
         })
     })
 
-    writeReviewBtn.addEventListener("click", () => {
+    writeReviewBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
         modalWriteReview.style.display = "flex";
     });
 
@@ -88,6 +90,10 @@
 
     markInput.addEventListener("change", () => {
         markValueDiv.textContent = markInput.value;
+    });
+
+    closeBtn.addEventListener("click", () => {
+        modalWriteReview.style.display = "none";
     })
 }
 
